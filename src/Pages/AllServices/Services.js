@@ -27,10 +27,9 @@ const Services = () => {
 
                     </div>
                 </div>
-                <div className='text-center'>
-                    <Link to='/services'><button className="btn btn-ghost bg-teal-400">Click To See More  <FaArrowRight></FaArrowRight> </button></Link>
-                </div>
+               
             </section>
+            
         </div>
     );
 };

@@ -15,11 +15,13 @@ const CardService = ({ service }) => {
                     <h3 className="flex-1 py-2 text-s font-semibold leading-snug">{description.substr(0, 100)}</h3>
                     <div className="flex flex-wrap justify-between pt-3 space-x-2 text-lg dark:text-gray-400">
                         <span>${price}</span>
-                        <span className='flex items-center'><FaStar></FaStar>{rating}</span>
+                        <span className='flex items-center'><FaStar className='text-orange-400 '></FaStar>{rating}</span>
                     </div>
                 </div>
             </article>
-           
+            <div className='text-center'>
+                <Link to={`/services/${_id}`}><button className="btn btn-ghost bg-teal-400">View Details<FaArrowRight ></FaArrowRight> </button></Link>
+            </div>
         </div>
     );
 };

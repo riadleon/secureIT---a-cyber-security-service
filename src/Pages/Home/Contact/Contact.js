@@ -13,7 +13,7 @@ const Contact = () => {
                     </div>
                     <img src="assets/svg/doodle.svg" alt="" className="p-6 h-52 md:h-64" />
                 </div>
-                <form novalidate="" className="space-y-6 ng-untouched ng-pristine ng-valid">
+                <form className="space-y-6 ng-untouched ng-pristine ng-valid">
                     <div>
                         <label for="name" className="text-sm">Full name</label>
                         <input id="name" type="text" placeholder="" className="w-full p-3 rounded dark:bg-gray-800" />
