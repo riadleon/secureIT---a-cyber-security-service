@@ -40,7 +40,7 @@ const Header = () => {
                             <li><a>Submenu 2</a></li>
                         </ul>
                     </li> */}
-                    <li> <Link>Services</Link> </li>
+                    <li> <Link to='/services'>Services</Link> </li>
                 </ul>
             </div>
             {/* <div className="navbar-end">
