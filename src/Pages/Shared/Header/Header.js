@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import './Header.css'
 
 const Header = () => {
+    const { user, logOut } = useContext(AuthContext)
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(err => console.error(err))
+    }
     return (
         <div className="navbar bg-color text-white">
             <div className="navbar-start">
@@ -42,10 +49,12 @@ const Header = () => {
                     </li> */}
                     <li> <Link to='/services'>Services</Link> </li>
                     <li> <Link to='/login'>Login</Link> </li>
+                    <li> <Link onClick={handleLogOut}>Logout</Link> </li>
                 </ul>
             </div>
             {/* <div className="navbar-end">
-                <a className="btn">Get started</a>
+                <img style={{ height: '30px' }}
+                    roundedCircle src={user.photoURL} alt="" />
             </div> */}
         </div>
     );
