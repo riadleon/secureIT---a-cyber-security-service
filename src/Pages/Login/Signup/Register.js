@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Register = () => {
     return (
         <div className="text-white w-full max-w-md p-4 rounded-md shadow bg-teal-800 mx-auto m-10">
-            <h1 className='text-4xl font-bold mb-5'>SignUp!!</h1>
+            <h1 className='text-5xl font-bold mb-5'>SignUp!!</h1>
             <form className="space-y-8 ng-untouched ng-pristine ng-valid">
                 <div className="space-y-4">
                     <div className="space-y-2">
