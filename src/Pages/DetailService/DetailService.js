@@ -12,7 +12,7 @@ const DetailService = () => {
             <div className='mb-12'>
                 <h3 className='text-6xl  font-bold mb-5 mt-5'>{title}</h3>
                 <PhotoProvider>
-                    <PhotoView src="/1.jpg">
+                    <PhotoView className='h-full w-full' src={img}>
                         <img className='w-2/5 h-96 mb-10' src={img} alt="" />
                     </PhotoView>
                 </PhotoProvider>
