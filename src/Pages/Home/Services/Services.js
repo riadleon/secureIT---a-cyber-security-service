@@ -1,6 +1,8 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { FaArrowRight } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import CardService from './CardService';
 
 
@@ -15,7 +17,7 @@ const Services = () => {
 
 
     return (
-        <section className="py-6 sm:py-12 text-black">
+        <section className="py-6 sm:py-12 text-black ">
             <div className="container p-6 mx-auto space-y-8">
                 <div className="space-y-2 text-center">
                     <p className="font-serif text-5xl text-teal-400 font-bold">Cyber Security Services</p>
@@ -31,6 +33,9 @@ const Services = () => {
                     }
 
                 </div>
+            </div>
+            <div className='text-center'>
+                <Link to='/services'><button  className="btn btn-ghost bg-teal-400">Click To See More  <FaArrowRight></FaArrowRight> </button></Link>
             </div>
         </section>
     );

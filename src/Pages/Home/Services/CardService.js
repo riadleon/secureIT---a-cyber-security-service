@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FaArrowRight, FaStar } from 'react-icons/fa';
 
 const CardService = ({ service }) => {
     const { _id, img, price, title, rating, description } = service;
@@ -14,10 +15,11 @@ const CardService = ({ service }) => {
                     <h3 className="flex-1 py-2 text-s font-semibold leading-snug">{description.substr(0, 100)}</h3>
                     <div className="flex flex-wrap justify-between pt-3 space-x-2 text-lg dark:text-gray-400">
                         <span>${price}</span>
-                        <span>{rating}</span>
+                        <span className='flex items-center'><FaStar></FaStar>{rating}</span>
                     </div>
                 </div>
             </article>
+           
         </div>
     );
 };
