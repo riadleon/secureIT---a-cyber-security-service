@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './Header.css'
 
 const Header = () => {
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-color text-white">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -24,7 +25,7 @@ const Header = () => {
                         <li> <Link to='/services'>Services</Link> </li>
                     </ul>
                 </div>
-              <Link className="btn btn-ghost normal-case text-xl" to='/'>SecureIT</Link>
+                <Link className="btn btn-ghost normal-case text-xl" to='/'>SecureIT</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
