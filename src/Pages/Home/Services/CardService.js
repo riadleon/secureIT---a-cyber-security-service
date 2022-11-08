@@ -12,7 +12,7 @@ const CardService = ({ service }) => {
                 </Link>
                 <div className="flex flex-col flex-1 p-6">
                     <p className="text-lg tracking-wider uppercase hover:underline text-black font-bold">{title}</p>
-                    <h3 className="flex-1 py-2 text-s font-semibold leading-snug">{description.substr(0, 100)}</h3>
+                    <h3 className="flex-1 py-2 text-s font-semibold leading-snug">{description.substr(0, 105)}</h3>
                     <div className="flex flex-wrap justify-between pt-3 space-x-2 text-lg dark:text-gray-400">
                         <span>${price}</span>
                         <span className='flex items-center'><FaStar className='text-orange-400 '></FaStar>{rating}</span>
