@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import useTitle from '../../../hooks/useTitle';
 import About from '../About/About';
@@ -9,6 +9,16 @@ import Services from '../Services/Services';
 
 const Home = () => {
     useTitle('Home-SecureIT');
+    // const [reviews, setReviews] = useState([]);
+
+    // useEffect(() => {
+    //     fetch('http://localhost:3000/services/636a59c21b94ea44bb20ca76')
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             console.log(data);
+    //         })
+
+    // }, [])
     return (
         <div>
             <Banner></Banner>

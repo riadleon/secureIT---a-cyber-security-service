@@ -7,8 +7,12 @@ const ReviewSection = () => {
     const { _id, title, price } = useLoaderData();
     const { user } = useContext(AuthContext)
 
-    // const img = user?.photoURL;
-    // console.log(user.photoURL);
+    
+
+    // const rev = useLoaderData();
+    // console.log('from rev', rev);
+
+
     const handleReview = e => {
         e.preventDefault();
         const form = e.target;
@@ -76,15 +80,15 @@ const ReviewSection = () => {
                 <p className='text-2xl'>Please <span className='font-bold'><Link to='/login'>Login</Link></span> To add a review</p>
         }
     </>
-    // const rev  = useLoaderData();
-    // console.log(rev);
+
+
     return (
         <div>
             {ReviewRender}
             {/* <div>
                 {
                     rev.map(r => <RsCard
-                       
+                        key={r._id}
                         r={r}
                     ></RsCard>)
                 }

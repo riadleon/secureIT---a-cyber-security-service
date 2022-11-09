@@ -2,7 +2,7 @@ import React from 'react';
 
 const TableReviews = ({ r, handleDelete, handleEdit }) => {
     const { _id, review, userImg, userName, serviceName, feedback } = r;
-    console.log(r);
+
     return (
         <tr>
 
