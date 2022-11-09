@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { toast } from "react-toastify";
+import { useForm } from "react-hook-form";
 
 const EditReview = () => {
     const router = useParams();
@@ -27,11 +28,10 @@ const EditReview = () => {
         e.preventDefault();
         const reviews = {
             feedback: e.target.review.value,
+        };
 
-        }
-        console.log(reviews);
 
-        fetch(`http://localhost:5000/reviews/edit/${id}`, {
+        fetch(`http://localhost:5000/reviews/${id}`, {
             method: "PATCH",
             headers: {
                 "content-type": "application/json"
@@ -58,15 +58,15 @@ const EditReview = () => {
 
                     </div>
                 </div>
-                <form onSubmit={handleSubmit} className="flex flex-col w-full">
+                <form onSubmit={handleSubmit}>
 
                     <input
                         type="text"
                         defaultValue={reviews?.feedback}
-                        name='review'
+                        name="review"
                         className="w-3/5 px-3 py-2 my-2
                  border rounded-md dark:border-gray-700 "></input>
-                    <button type="submit" className="w-3/5 px-3 py-2 font-semibold rounded-md dark:text-gray-900 dark:bg-purple-400">Update</button>
+                    <button className="w-3/5 px-3 py-2 font-semibold rounded-md dark:text-gray-900 dark:bg-purple-400">Update</button>
 
                 </form>
             </div>

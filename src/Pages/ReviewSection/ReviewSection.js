@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import toast from 'react-hot-toast';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import RsCard from './RsCard';
@@ -7,25 +8,24 @@ const ReviewSection = () => {
     const { _id, title, price } = useLoaderData();
     const { user } = useContext(AuthContext)
 
-    
+
 
     // const rev = useLoaderData();
     // console.log('from rev', rev);
 
 
-    const handleReview = e => {
+    const handleReview = (e) => {
         e.preventDefault();
-        const form = e.target;
-        const reviewItems = form.review.value;
-
         const reviewData = {
             review: _id,
             userImg: user.photoURL,
             userName: user.displayName,
             serviceName: title,
-            feedback: reviewItems,
+            feedback: e.target.review.value,
+        };
 
-        }
+
+
         fetch('http://localhost:5000/reviews', {
             method: 'POST',
             headers: {
@@ -35,14 +35,16 @@ const ReviewSection = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
-                if (data.acknowledged) {
-                    alert('Review submitted successfully')
-                    form.reset();
-
+                if (data.success) {
+                    toast.success(data.message);
+                } else {
+                    toast.error(data.error);
                 }
             })
-            .catch(er => console.error(er));
+            .catch(err => {
+                toast.error(err.message);
+            })
+
 
     }
 
@@ -65,8 +67,11 @@ const ReviewSection = () => {
                             </div>
                             <form onSubmit={handleReview} className="flex flex-col w-full">
 
-                                <textarea name='review' rows="3" placeholder="Message..." className="w-3/5 px-3 py-2 my-2
-                                 border rounded-md dark:border-gray-700 "></textarea>
+                                <input
+                                    type="text"
+                                    name="review"
+                                    className="w-3/5 px-3 py-2 my-2
+                 border rounded-md dark:border-gray-700 "></input>
                                 <button type="submit" className="w-3/5 px-3 py-2 font-semibold rounded-md dark:text-gray-900 dark:bg-purple-400">Leave feedback</button>
 
                             </form>
