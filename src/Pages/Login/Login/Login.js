@@ -24,7 +24,7 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                form.reset();
+
                 setError('');
                 navigate(from, { replace: true });
                 if (user.emailVerified) {
@@ -64,12 +64,12 @@ const Login = () => {
                 <h4 className="text-3xl m-4 font-bold">Log In</h4>
                 <div className="pace-y-4">
                     <input type="email" name="email" className="w-1/5 px-3 py-2 border rounded-md dark:border-gray-700 "
-                        placeholder="Your Email" id="logemail" autocomplete="off" />
+                        placeholder="Your Email" id="logemail" />
                     <i className="input-icon uil uil-at"></i>
                 </div>
                 <div className="form-group mt-2">
                     <input type="password" name="password" className="w-1/5 px-3 py-2 border rounded-md dark:border-gray-700 "
-                        placeholder="Your Password" id="logpass" autocomplete="off" />
+                        placeholder="Your Password" id="logpass" />
                     <i className="input-icon uil uil-lock-alt"></i>
                 </div>
                 <button className="mt-5 px-8 py-3 font-semibold rounded-md btn btn-ghost bg-teal-400">Submit</button>
