@@ -1,5 +1,7 @@
 import React from 'react';
-import { toast } from "react-toastify";
+import { Toaster } from 'react-hot-toast';
+import { toast, ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const AddService = () => {
     const handleSubmit = (e) => {
@@ -21,7 +23,8 @@ const AddService = () => {
         }).then(res => res.json())
             .then(data => {
                 if (data.success) {
-                    toast.success(data.message);
+                    alert(data.success)
+                    e.target.reset();
                 } else {
                     toast.error(data.error);
                 }
@@ -33,6 +36,7 @@ const AddService = () => {
     };
     return (
         <div className="py-32 px-10 min-h-screen w-full">
+
             <h3 className='text-4xl font-bold text-center'>Add Your Service Here</h3>
             <div className="bg-white p-10 md:w-3/4 lg:w-1/2 mx-auto">
                 <form onSubmit={handleSubmit}>
@@ -95,8 +99,10 @@ const AddService = () => {
                         />
                     </div>
 
-                    <div className="text-right">
+                    <div className="text-center">
                         <button className="py-3 px-8 btn btn-ghost bg-teal-400 text-white font-bold">Add</button>
+                        <Toaster></Toaster>
+                        <ToastContainer></ToastContainer>
                     </div>
                 </form>
             </div>
