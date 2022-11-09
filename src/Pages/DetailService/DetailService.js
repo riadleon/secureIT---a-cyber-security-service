@@ -4,9 +4,11 @@ import { useLoaderData } from 'react-router-dom';
 import ReviewSection from '../ReviewSection/ReviewSection';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
+import useTitle from '../../hooks/useTitle';
 
 const DetailService = () => {
     const { _id, img, title, description, price, rating } = useLoaderData();
+    useTitle('Service-Details-SecureIT')
     return (
         <div className='p-5 ml-10'>
             <div className='mb-12'>

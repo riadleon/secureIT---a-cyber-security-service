@@ -2,10 +2,12 @@ import React from 'react';
 import { useLoaderData, Link } from 'react-router-dom';
 import { FaArrowRight, FaStar } from 'react-icons/fa';
 import AllServiceCard from './AllServiceCard';
+import useTitle from '../../hooks/useTitle';
 
 const Services = () => {
     const services = useLoaderData();
     console.log(services);
+    useTitle('Services-SecureIT');
 
 
     return (
