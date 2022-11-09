@@ -1,7 +1,8 @@
 import React from 'react';
 
-const TableReviews = ({ r }) => {
+const TableReviews = ({ r, handleDelete, handleEdit }) => {
     const { _id, review, userImg, userName, serviceName, feedback } = r;
+    console.log(r);
     return (
         <tr>
 
@@ -25,8 +26,8 @@ const TableReviews = ({ r }) => {
             </td>
             <td>{feedback}</td>
             <th>
-                <button className="btn btn-ghost btn-xs bg-teal-800 text-white">Edit</button>
-                <button className="btn btn-ghost btn-xs bg-rose-800 text-white">Delete</button>
+                <button onClick={() => handleEdit(_id)} className="btn btn-ghost btn-xs bg-teal-800 text-white">Edit</button>
+                <button onClick={() => handleDelete(_id)} className="btn btn-ghost btn-xs bg-rose-800 text-white">Delete</button>
             </th>
         </tr>
     );

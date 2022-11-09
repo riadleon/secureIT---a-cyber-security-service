@@ -1,6 +1,7 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import RsCard from './RsCard';
 
 const ReviewSection = () => {
     const { _id, title, price } = useLoaderData();
@@ -75,10 +76,19 @@ const ReviewSection = () => {
                 <p className='text-2xl'>Please <span className='font-bold'><Link to='/login'>Login</Link></span> To add a review</p>
         }
     </>
+    // const rev  = useLoaderData();
+    // console.log(rev);
     return (
         <div>
             {ReviewRender}
-            <h3>AWESOME JOB</h3>
+            {/* <div>
+                {
+                    rev.map(r => <RsCard
+                       
+                        r={r}
+                    ></RsCard>)
+                }
+            </div> */}
         </div>
     );
 };

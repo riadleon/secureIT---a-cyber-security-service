@@ -6,7 +6,9 @@ import DetailService from "../../Pages/DetailService/DetailService";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login/Login";
 import Register from "../../Pages/Login/Signup/Register"
+import EditReview from "../../Pages/MyReviews/EditReview";
 import MyReviews from "../../Pages/MyReviews/MyReviews";
+import ReviewSection from "../../Pages/ReviewSection/ReviewSection";
 import Blog from "../../Pages/Shared/Blog/Blog";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
@@ -53,6 +55,15 @@ const router = createBrowserRouter([
             {
                 path: '/blog',
                 element: <Blog></Blog>
+            },
+            {
+                path: '/reviews/:id',
+                element: <ReviewSection></ReviewSection>,
+                loader: ({ params }) => fetch(`http://localhost:5000/reviews/${params.id}`)
+            },
+            {
+                path: '/reviews/edit/:id',
+                element: <EditReview></EditReview>,
             },
         ]
 
