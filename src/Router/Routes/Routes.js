@@ -11,6 +11,7 @@ import MyReviews from "../../Pages/MyReviews/MyReviews";
 import ReviewSection from "../../Pages/ReviewSection/ReviewSection";
 import Blog from "../../Pages/Shared/Blog/Blog";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import Spinner from "../PrivateRoute/Spinner";
 
 const router = createBrowserRouter([
     {
@@ -27,7 +28,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/services',
-                element: <Services></Services>,
+                element: <Spinner><Services></Services></Spinner>,
                 loader: () => fetch('http://localhost:5000/services')
             },
             {
@@ -37,11 +38,11 @@ const router = createBrowserRouter([
             },
             {
                 path: '/login',
-                element: <Login></Login>
+                element: <Spinner><Login></Login></Spinner>,
             },
             {
                 path: '/register',
-                element: <Register></Register>
+                element: <Spinner><Register></Register></Spinner>,
             },
             {
                 path: '/addService',
