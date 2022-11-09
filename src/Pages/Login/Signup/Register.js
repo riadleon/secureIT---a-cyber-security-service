@@ -2,14 +2,32 @@ import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
+import { GoogleAuthProvider } from 'firebase/auth';
+import { FaGoogle } from 'react-icons/fa';
+import ReactTooltip from 'react-tooltip'
+
+import { getAuth, signInWithPopup, GithubAuthProvider } from "firebase/auth";
+import app from '../../../firebase/firebase.config';
 import useTitle from '../../../hooks/useTitle';
 
-
-
 const Register = () => {
-    useTitle('Register-SecureIT')
+    useTitle('Register');
     const [error, setError] = useState('');
-    const { createUser, updateUserProfile, verifyEmail } = useContext(AuthContext);
+    const { createUser, updateUserProfile, verifyEmail, providerLogin } = useContext(AuthContext);
+
+    const googleProvider = new GoogleAuthProvider();
+
+    const handleGoogleSignIn = () => {
+        providerLogin(googleProvider)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                toast.success('Google logged in successfully')
+            })
+            .catch(error => console.error(error))
+    }
+
+
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -18,7 +36,7 @@ const Register = () => {
         const photoURL = form.photoURL.value;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(name, photoURL, email, password);
+        // console.log(name, photoURL, email, password);
 
         createUser(email, password)
             .then(result => {
@@ -26,8 +44,8 @@ const Register = () => {
                 console.log(user);
                 setError('');
                 form.reset();
-                // handleUpdateUserProfile(name, photoURL);
-                // handleEmailVerification();
+                handleUpdateUserProfile(name, photoURL);
+                handleEmailVerification();
                 toast.success('Please verify your email address.')
             })
             .catch(e => {
@@ -36,59 +54,62 @@ const Register = () => {
             });
     }
 
-    // const handleUpdateUserProfile = (name, photoURL) => {
-    //     const profile = {
-    //         displayName: name,
-    //         photoURL: photoURL
-    //     }
+    const handleUpdateUserProfile = (name, photoURL) => {
+        const profile = {
+            displayName: name,
+            photoURL: photoURL
+        }
 
-    //     updateUserProfile(profile)
-    //         .then(() => { })
-    //         .catch(error => console.error(error));
-    // }
+        updateUserProfile(profile)
+            .then(() => { })
+            .catch(error => console.error(error));
+    }
 
-    // const handleEmailVerification = () => {
-    //     verifyEmail()
-    //         .then(() => { })
-    //         .catch(error => console.error(error));
-    // }
+    const handleEmailVerification = () => {
+        verifyEmail()
+            .then(() => { })
+            .catch(error => console.error(error));
+    }
 
     // const handleAccepted = event => {
     //     setAccepted(event.target.checked)
     // }
 
     return (
-        <div className="text-white w-full max-w-md p-4 rounded-md shadow bg-teal-800 mx-auto m-10">
-            <h1 className='text-5xl font-bold mb-5'>SignUp!!</h1>
-            <form onSubmit={handleSubmit} className="space-y-8 ng-untouched ng-pristine ng-valid">
+        <form onSubmit={handleSubmit} >
+            <div className="section text-center">
+                <h4 className="text-3xl m-4 font-bold">Register</h4>
                 <div className="space-y-4">
-                    <div className="space-y-2">
-                        <label htmlFor="name" className="block text-sm">User Name</label>
-                        <input type="text" name="name" id="name" placeholder="write your name..." className="w-full px-3 py-2 border rounded-md dark:border-gray-700 bg-gray-900 dark:text-gray-100 focus:dark:border-purple-400" />
-                    </div>
-                    <div className="space-y-2">
-                        <label htmlFor="name" className="block text-sm">User Photo</label>
-                        <input type="text" name="photoURL" id="photoUrl" placeholder="Add your Your Photo..." className="w-full px-3 py-2 border rounded-md dark:border-gray-700 bg-gray-900 dark:text-gray-100 focus:dark:border-purple-400" />
-                    </div>
-                    <div className="space-y-2">
-                        <label htmlFor="email" className="block text-sm">Email address</label>
-                        <input type="email" name="email" id="email" placeholder="write your email..." className="w-full px-3 py-2 border rounded-md dark:border-gray-700 bg-gray-900 dark:text-gray-100 focus:dark:border-purple-400" />
-                    </div>
-                    <div className="space-y-2">
-                        <div className="flex justify-between">
-                            <label htmlFor="password" className="text-sm">Password</label>
-
-                        </div>
-                        <input type="password" name="password" id="password" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 bg-gray-900 dark:text-gray-100 focus:dark:border-purple-400" />
-                    </div>
+                    <input type="text" name="name" className="w-1/5 px-3 py-2 border rounded-md dark:border-gray-700 "
+                        placeholder="Your Name" id="logname"  />
+                    <i className="input-icon uil uil-at"></i>
                 </div>
-                <button type="button" className="w-full px-8 py-3 font-semibold rounded-md btn btn-ghost bg-teal-400">Sign Up</button>
-            </form>
-            <Link to='/login' className=" text-center text-xs hover:underline text-white font-bold">Already Have an account?</Link>
-            <p className="mb-0 mt-4 text-center">
-                {error}
-            </p>
-        </div>
+                <div className="form-group mt-2">
+                    <input type="text" name="photoURL" className="w-1/5 px-3 py-2 border rounded-md dark:border-gray-700 "
+                        placeholder="Add Your Photo" id="logname"  />
+                    <i className="input-icon uil uil-lock-alt"></i>
+                </div>
+                <div className="form-group mt-2">
+                    <input type="email" name="email" className="w-1/5 px-3 py-2 border rounded-md dark:border-gray-700 "
+                        placeholder="Enter Email" id="logmail"  required />
+                    <i className="input-icon uil uil-lock-alt"></i>
+                </div>
+                <div className="form-group mt-2">
+                    <input type="password" name="password" className="w-1/5 px-3 py-2 border rounded-md dark:border-gray-700 "
+                        placeholder="password" id="logpass"  required />
+                    <i className="input-icon uil uil-lock-alt"></i>
+                </div>
+                <button className="mt-5 px-8 py-3 font-semibold rounded-md btn btn-ghost bg-teal-400">Register</button>
+                <p className="mb-0 mt-4 text-center"><Link to='/login' className="link">Already Have an account? </Link></p>
+                <p className="mb-0 mt-4 text-center">
+                    {error}
+                </p>
+                <div className='flex items-center justify-center'>
+                    <button onClick={handleGoogleSignIn} className="btn btn-primary mb-14 mr-6 " data-tip="Sign with Google"><FaGoogle></FaGoogle></button>
+                    <ReactTooltip></ReactTooltip>
+                </div>
+            </div>
+        </form>
 
     );
 };
