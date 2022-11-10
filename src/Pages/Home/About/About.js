@@ -11,8 +11,8 @@ const About = () => {
                     </div>
                     <div className="grid lg:gap-8 lg:grid-cols-2 lg:items-center">
                         <div>
-                            <h3 className="text-2xl font-bold tracking-tight sm:text-3xl ">Ad vix debet docendi</h3>
-                            <p className="mt-3 text-lg dark:text-gray-400">Ne dicta praesent ocurreret has, diam theophrastus at pro. Eos etiam regione ut, persius eripuit quo id. Sit te euismod tacimates.</p>
+                            <h3 className="text-2xl font-bold tracking-tight sm:text-3xl ">Without stopping for a moment we give you best technology experience discussing from our expertise to stop threats being theft or damaged.</h3>
+
                             <div className="mt-12 space-y-12">
                                 <div className="flex">
                                     <div className="flex-shrink-0">
@@ -23,8 +23,8 @@ const About = () => {
                                         </div>
                                     </div>
                                     <div className="ml-4">
-                                        <h4 className="text-lg font-medium leading-6 ">Per ei quaeque sensibus</h4>
-                                        <p className="mt-2 dark:text-gray-400">Ex usu illum iudico molestie. Pro ne agam facete mediocritatem, ridens labore facete mea ei. Pro id apeirian dignissim.</p>
+                                        <h4 className="text-lg font-medium leading-6 ">Identifying Threats</h4>
+
                                     </div>
                                 </div>
                                 <div className="flex">
@@ -36,8 +36,8 @@ const About = () => {
                                         </div>
                                     </div>
                                     <div className="ml-4">
-                                        <h4 className="text-lg font-medium leading-6 ">Cu imperdiet posidonium sed</h4>
-                                        <p className="mt-2 dark:text-gray-400">Amet utinam aliquando ut mea, malis admodum ocurreret nec et, elit tibique cu nec. Nec ex maluisset inciderint, ex quis.</p>
+                                        <h4 className="text-lg font-medium leading-6 ">Cyber Risk Assessment</h4>
+
                                     </div>
                                 </div>
                                 <div className="flex">
@@ -49,8 +49,8 @@ const About = () => {
                                         </div>
                                     </div>
                                     <div className="ml-4">
-                                        <h4 className="text-lg font-medium leading-6 ">Nulla omittam sadipscing mel ne</h4>
-                                        <p className="mt-2 dark:text-gray-400">At sed possim oporteat probatus, justo graece ne nec, minim commodo legimus ut vix. Ut eos iudico quando soleat, nam modus.</p>
+                                        <h4 className="text-lg font-medium leading-6 ">Testing Cyber Security</h4>
+
                                     </div>
                                 </div>
                             </div>
@@ -62,8 +62,8 @@ const About = () => {
                     <div>
                         <div className="grid lg:gap-8 lg:grid-cols-2 lg:items-center">
                             <div className="lg:col-start-2">
-                                <h3 className="text-2xl font-bold tracking-tight sm:text-3xl ">Eam nibh gloriatur ex</h3>
-                                <p className="mt-3 text-lg dark:text-gray-400">Per odio fabellas consulatu cu. Utroque detracto mel ea, quo te latine theophrastus. Ea his tale nibh dissentias, mei exerci tamquam euripidis cu.</p>
+                                <h3 className="text-2xl font-bold tracking-tight sm:text-3xl ">Managing Cloud Security</h3>
+                             
                                 <div className="mt-12 space-y-12">
                                     <div className="flex">
                                         <div className="flex-shrink-0">
@@ -74,8 +74,8 @@ const About = () => {
                                             </div>
                                         </div>
                                         <div className="ml-4">
-                                            <h4 className="text-lg font-medium leading-6 ">Cibo augue offendit has ad</h4>
-                                            <p className="mt-2 dark:text-gray-400">An per velit appellantur, ut utinam minimum nominavi sit, odio nostro habemus ne nec. Ne sonet regione contentiones est.</p>
+                                            <h4 className="text-lg font-medium leading-6 ">Database Security</h4>
+                                           
                                         </div>
                                     </div>
                                     <div className="flex">
@@ -87,8 +87,8 @@ const About = () => {
                                             </div>
                                         </div>
                                         <div className="ml-4">
-                                            <h4 className="text-lg font-medium leading-6 ">At eum ferri luptatum lobortis</h4>
-                                            <p className="mt-2 dark:text-gray-400">Te per quidam maiorum ocurreret, etiam delicatissimi usu ad. Ne has quod periculis. Te sit primis iisque efficiantur.</p>
+                                            <h4 className="text-lg font-medium leading-6 ">Server Security</h4>
+                                          
                                         </div>
                                     </div>
                                     <div className="flex">
@@ -100,8 +100,8 @@ const About = () => {
                                             </div>
                                         </div>
                                         <div className="ml-4">
-                                            <h4 className="text-lg font-medium leading-6 ">Dicunt verterem evertitur eu sea</h4>
-                                            <p className="mt-2 dark:text-gray-400">Audire principes rationibus eam an, autem nominavi luptatum per te. Sumo fabulas vim eu, sonet saperet eleifend ut vix.</p>
+                                            <h4 className="text-lg font-medium leading-6 ">Web Security</h4>
+                                            
                                         </div>
                                     </div>
                                 </div>

@@ -2,8 +2,10 @@ import React from 'react';
 import { Toaster } from 'react-hot-toast';
 import { toast, ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import useTitle from '../../hooks/useTitle';
 
 const AddService = () => {
+    useTitle('AddService')
     const handleSubmit = (e) => {
         e.preventDefault();
         const services = {
@@ -23,7 +25,7 @@ const AddService = () => {
         }).then(res => res.json())
             .then(data => {
                 if (data.success) {
-                    alert(data.success)
+                    toast(data.success)
                     e.target.reset();
                 } else {
                     toast.error(data.error);

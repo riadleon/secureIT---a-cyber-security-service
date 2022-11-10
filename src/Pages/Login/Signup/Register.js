@@ -81,22 +81,22 @@ const Register = () => {
                 <h4 className="text-3xl m-4 font-bold">Register</h4>
                 <div className="space-y-4">
                     <input type="text" name="name" className="w-1/5 px-3 py-2 border rounded-md dark:border-gray-700 "
-                        placeholder="Your Name" id="logname"  />
+                        placeholder="Your Name" id="logname" />
                     <i className="input-icon uil uil-at"></i>
                 </div>
                 <div className="form-group mt-2">
                     <input type="text" name="photoURL" className="w-1/5 px-3 py-2 border rounded-md dark:border-gray-700 "
-                        placeholder="Add Your Photo" id="logname"  />
+                        placeholder="Add Your Photo" id="logname" />
                     <i className="input-icon uil uil-lock-alt"></i>
                 </div>
                 <div className="form-group mt-2">
                     <input type="email" name="email" className="w-1/5 px-3 py-2 border rounded-md dark:border-gray-700 "
-                        placeholder="Enter Email" id="logmail"  required />
+                        placeholder="Enter Email" id="logmail" required />
                     <i className="input-icon uil uil-lock-alt"></i>
                 </div>
                 <div className="form-group mt-2">
                     <input type="password" name="password" className="w-1/5 px-3 py-2 border rounded-md dark:border-gray-700 "
-                        placeholder="password" id="logpass"  required />
+                        placeholder="password" id="logpass" required />
                     <i className="input-icon uil uil-lock-alt"></i>
                 </div>
                 <button className="mt-5 px-8 py-3 font-semibold rounded-md btn btn-ghost bg-teal-400">Register</button>

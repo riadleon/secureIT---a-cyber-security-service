@@ -2,9 +2,11 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useLoaderData, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 import TableReviews from './TableReviews';
 
 const MyReviews = () => {
+    useTitle('MyReviews')
     const { user, logOut } = useContext(AuthContext);
     const [reviews, setReviews] = useState([])
     const [refresh, setRefresh] = useState(false);
@@ -40,7 +42,7 @@ const MyReviews = () => {
             .then(data => {
                 if (data.success) {
                     toast.success(data.message);
-                    setRefresh(refresh);
+                    setRefresh(!refresh);
                 } else {
                     toast.error(data.error);
                 }

@@ -53,7 +53,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className="flex items-center justify-center px-6 pt-12 text-sm">
-                <span className="dark:text-gray-400">© Copyright 1986. All Rights Reserved.</span>
+                <span className="dark:text-gray-400">© Copyright 2022. All Rights Reserved To Spartan Leo.</span>
             </div>
         </footer>
     );

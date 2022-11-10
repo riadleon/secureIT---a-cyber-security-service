@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import useTitle from '../../../hooks/useTitle';
 
 const Blog = () => {
+    useTitle('blog');
 
-    
+
     return (
         <div>
             <section className="bg-teal-800 text-gray-100">

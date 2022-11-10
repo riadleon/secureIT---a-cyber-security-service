@@ -52,6 +52,7 @@ const ReviewSection = () => {
                 if (data.success) {
                     toast.success(data.message);
                     setRefresh(!refresh)
+                    e.target.reset();
                 } else {
                     toast.error(data.error);
                 }

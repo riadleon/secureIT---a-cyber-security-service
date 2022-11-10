@@ -8,7 +8,7 @@ import Services from '../Services/Services';
 
 
 const Home = () => {
-    useTitle('Home-SecureIT');
+    useTitle('Home');
     // const [reviews, setReviews] = useState([]);
 
     // useEffect(() => {
