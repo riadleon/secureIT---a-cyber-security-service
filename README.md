@@ -1,3 +1,37 @@
+
+## Website Name: SecureIT
+
+## Live Site:
+
+Client : https://web-client-e6595.web.app/
+Server: https://secure-web-server.vercel.app/services
+
+## About the website:
+(•) Its a Cyber Security Service website
+(•) Anybody around the world can visit it and learn.
+(•) Its responsive and mobile friendly.
+(•) You can switch in to dark themes quite easily.
+(•) If you have Any Query just contact us
+
+
+## Frameworks and libraries :
+
+(•) React js
+(•) tailwind css
+(•) react tootip
+(•) react-image
+(•) react-hot-toaster
+(•) react-icons
+(•) react-leaflet
+(•) mongodb
+(•) express
+(•) vercel
+(•) mamba ui
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
