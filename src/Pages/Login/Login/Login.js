@@ -23,17 +23,44 @@ const Login = () => {
         signIn(email, password)
             .then(result => {
                 const user = result.user;
-                console.log(user);
 
-                setError('');
-                navigate(from, { replace: true });
-                if (user.emailVerified) {
-                    navigate(from, { replace: true });
-                    toast.success('You have successfully logged in!!')
+                const currentUser = {
+                    email: user.email
                 }
-                else {
-                    toast.error('Your email is not verified. Please verify your email address.')
-                }
+
+
+
+                //get jwt
+                fetch('http://localhost:5000/jwt', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(currentUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        // local storage is the easiest but not the best place to store jwt token
+                        localStorage.setItem('secureWeb-token', data.token);
+                        navigate(from, { replace: true });
+
+                    });
+
+                // setError('');
+                // navigate(from, { replace: true });
+
+
+
+
+
+                // if (user.emailVerified) {
+                //     navigate(from, { replace: true });
+                //     toast.success('You have successfully logged in!!')
+                // }
+                // else {
+                //     toast.error('Your email is not verified. Please verify your email address.')
+                // }
             })
             .catch(error => {
                 console.error(error)
