@@ -10,7 +10,7 @@ const MyReviews = () => {
     const [refresh, setRefresh] = useState(false);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?email=${user?.email}`, {
+        fetch(`https://secure-web-server.vercel.app/reviews?email=${user?.email}`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('secureWeb-token')}`
             }
@@ -30,7 +30,7 @@ const MyReviews = () => {
 
 
     const handleDelete = (id) => {
-        fetch(`http://localhost:5000/reviews/${id}`, {
+        fetch(`https://secure-web-server.vercel.app/reviews/${id}`, {
             method: "DELETE",
             headers: {
                 authorization: `Bearer ${localStorage.getItem(' secureWeb-token')}`

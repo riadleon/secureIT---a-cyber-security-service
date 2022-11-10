@@ -1,6 +1,6 @@
 [
     {
-        "service_id": "04",
+        
         "title": "Website Scanning",
         "img": "https://cdn.cyberpunk.rs/wp-content/uploads/2019/11/skipfish_background.jpg",
         "price": "20.00",
@@ -8,7 +8,7 @@
         "rating": "4.5"
     },
     {
-        "service_id": "05",
+        
         "title": "Malware Removal",
         "img": "https://www.malcare.com/wp-content/uploads/2022/01/feature-01-1.png",
         "price": "20.00",
@@ -16,7 +16,7 @@
         "rating": "4.0"
     },
     {
-        "service_id": "01",
+        
         "title": "Cloud Security",
         "img": "https://www.kaspersky.com/content/en-global/images/repository/isc/2020/what-is-cloud-security01.jpg",
         "price": "200.00",
@@ -24,7 +24,7 @@
         "rating": "4.5"
     },
     {
-        "service_id": "02",
+        
         "title": "Data Protection",
         "img": "https://images.thedailystar.net/sites/default/files/images/2021/09/12/data-protection2.jpg",
         "price": "150.00",
@@ -32,7 +32,7 @@
         "rating": "4.3"
     },
     {
-        "service_id": "03",
+        
         "title": "Application Security",
         "img": "https://www.nutanix.com/content/dam/nutanix-cxo/thumbnails/thumb_app_security_750x563.jpg",
         "price": "30.00",
@@ -40,7 +40,7 @@
         "rating": "4.7"
     },
     {
-        "service_id": "06",
+        
         "title": "Threat Hunter",
         "img": "https://i2-prod.mirror.co.uk/incoming/article10410255.ece/ALTERNATES/s1200d/Youve-been-hacked.jpg",
         "price": "20.00",
