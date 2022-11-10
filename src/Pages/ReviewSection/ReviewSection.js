@@ -7,6 +7,7 @@ import RsCard from './RsCard';
 const ReviewSection = () => {
     const { _id, title, price } = useLoaderData();
     const { user } = useContext(AuthContext)
+    const [refresh, setRefresh] = useState(false);
 
     const [reviews, setReviews] = useState([]);
 
@@ -32,6 +33,7 @@ const ReviewSection = () => {
             userName: user.displayName,
             serviceName: title,
             feedback: e.target.review.value,
+            email: user.email,
         };
 
 
@@ -47,6 +49,7 @@ const ReviewSection = () => {
             .then(data => {
                 if (data.success) {
                     toast.success(data.message);
+                    setRefresh(!refresh)
                 } else {
                     toast.error(data.error);
                 }

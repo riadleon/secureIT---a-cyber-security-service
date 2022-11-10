@@ -1,11 +1,23 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useLoaderData, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import TableReviews from './TableReviews';
 
 const MyReviews = () => {
-    const reviews = useLoaderData();
+    const { user } = useContext(AuthContext);
+    const [reviews, setReviews] = useState([])
     const [refresh, setRefresh] = useState(false);
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/reviews?email=${user?.email}`)
+            .then(res => res.json())
+            .then(data => {
+                setReviews(data);
+            })
+    }, [user?.email])
+
+
 
     const handleDelete = (id) => {
         fetch(`http://localhost:5000/reviews/${id}`, {
@@ -15,7 +27,7 @@ const MyReviews = () => {
             .then(data => {
                 if (data.success) {
                     toast.success(data.message);
-                    setRefresh(!refresh);
+                    setRefresh(refresh);
                 } else {
                     toast.error(data.error);
                 }
@@ -48,7 +60,7 @@ const MyReviews = () => {
                                 key={r._id}
                                 r={r}
                                 handleDelete={handleDelete}
-                                handleEdit = {handleEdit}
+                                handleEdit={handleEdit}
                             ></TableReviews>)
                         }
 

@@ -41,7 +41,7 @@ const EditReview = () => {
             .then(data => {
                 if (data.success) {
                     toast.success(data.message);
-                    navigate("/myReviews")
+                    navigate("/reviews")
                 } else {
                     toast.err(data.error)
                 }
@@ -62,7 +62,7 @@ const EditReview = () => {
 
                     <input
                         type="text"
-                        defaultValue={reviews?.feedback}
+                        placeholder={reviews?.feedback}
                         name="review"
                         className="w-3/5 px-3 py-2 my-2
                  border rounded-md dark:border-gray-700 "></input>
