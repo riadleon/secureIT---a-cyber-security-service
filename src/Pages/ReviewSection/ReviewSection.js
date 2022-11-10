@@ -8,6 +8,16 @@ const ReviewSection = () => {
     const { _id, title, price } = useLoaderData();
     const { user } = useContext(AuthContext)
 
+    const [reviews, setReviews] = useState([]);
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/reviews/services/${_id}`)
+            .then(res => res.json())
+            .then(data => {
+                setReviews(data);
+            })
+    }, [])
+
 
 
     // const rev = useLoaderData();
@@ -72,7 +82,7 @@ const ReviewSection = () => {
                                     name="review"
                                     className="w-3/5 px-3 py-2 my-2
                  border rounded-md dark:border-gray-700 "></input>
-                                <button type="submit" className="w-3/5 px-3 py-2 font-semibold rounded-md dark:text-gray-900 dark:bg-purple-400">Leave feedback</button>
+                                <button type="submit" className="w-3/5 px-3 py-2 font-semibold rounded-md dark:text-gray-900 dark:bg-purple-400">Leave Review</button>
 
                             </form>
                         </div>
@@ -89,15 +99,17 @@ const ReviewSection = () => {
 
     return (
         <div>
+
             {ReviewRender}
-            {/* <div>
+            <div>
+                <h1 className='text-3xl font-bold ml-5'>Reviews For this Service</h1>
                 {
-                    rev.map(r => <RsCard
-                        key={r._id}
-                        r={r}
+                    reviews.map(review => <RsCard
+                        key={review._id}
+                        review={review}
                     ></RsCard>)
                 }
-            </div> */}
+            </div>
         </div>
     );
 };

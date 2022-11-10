@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 const Blog = () => {
+
+    
     return (
         <div>
             <section className="bg-teal-800 text-gray-100">
